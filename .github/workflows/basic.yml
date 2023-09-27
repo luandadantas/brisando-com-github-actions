@@ -1,5 +1,5 @@
 # This workflow will install Python dependencies, run tests and lint with a single version of Python
-name: Build
+name: Python Aplication
 
 on:
   workflow_dispatch:
@@ -24,10 +24,3 @@ jobs:
     - name: Test with pytest
       run:
         pytest
-    - name: Build a binary wheel file
-      run: python3 -m build
-    - name: Store the distribution packages
-      uses: actions/upload-artifact@v3
-      with:
-        name: calculadora
-        path: dist/

@@ -1,5 +1,5 @@
 # This workflow will install Python dependencies, run tests and lint with a single version of Python
-name: Build
+name: Deploy Dev
 
 on:
   workflow_dispatch:
@@ -24,3 +24,15 @@ jobs:
     - name: Test with pytest
       run:
         pytest
+  
+  deploy-dev:
+    name: deploy dev
+    runs-on: ubuntu-latest
+
+    environment:
+      name: dev
+    
+    needs: build
+    steps:
+      - name: deploy-dev
+        run: echo "Hello World"

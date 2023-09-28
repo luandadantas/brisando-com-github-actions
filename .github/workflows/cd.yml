@@ -1,0 +1,23 @@
+# This workflow will install Python dependencies, run tests and lint with a single version of Python
+name: Deploy Dev
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    uses: luandadantas/brisando-com-github-actions/.github/workflows/ci.yaml@main
+    # secrets: inherit
+  
+  deploy-dev:
+    needs: build
+    
+    name: deploy dev
+    runs-on: ubuntu-latest
+
+    environment:
+      name: dev
+    
+    steps:
+      - name: deploy-dev
+        run: echo "Hello World"

@@ -5,7 +5,7 @@ on:
 
 jobs:
   build:
-    uses: luandadantas/brisando-com-github-actions/.github/workflows/ci.yaml@main
+    uses: luandadantas/brisando-com-github-actions/.github/workflows/ci.yml@main
     # secrets: inherit
   
   deploy-dev:
